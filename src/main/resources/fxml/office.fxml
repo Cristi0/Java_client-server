@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.fxml.Office">
+   <children>
+      <TableView fx:id="table" layoutX="25.0" layoutY="56.0" prefHeight="200.0" prefWidth="235.0">
+        <columns>
+          <TableColumn fx:id="collumName" prefWidth="128.0" text="Nume" />
+            <TableColumn fx:id="NrParticipanti" prefWidth="102.0" text="Nr Participanti" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="combCapacitateMotor" layoutX="135.0" layoutY="18.0" onAction="#changeTable" prefWidth="150.0" />
+      <Label layoutX="33.0" layoutY="22.0" text="Capacitate motor" />
+      <TableView fx:id="tableParticipanti" layoutX="300.0" layoutY="56.0" prefHeight="200.0" prefWidth="200.0">
+         <columns>
+            <TableColumn fx:id="numeParticipant" prefWidth="75.0" text="Nume" />
+            <TableColumn fx:id="capacitateMotorParticipant" prefWidth="111.0" text="Capacitate Motor" />
+         </columns>
+      </TableView>
+      <ComboBox fx:id="combEchipa" layoutX="350.0" layoutY="18.0" onAction="#changeTableParticipanti" prefWidth="150.0" />
+      <Label layoutX="300.0" layoutY="22.0" text="Echipa" />
+      <Button layoutX="500.0" layoutY="354.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <TextField fx:id="fieldnumeParticipant" layoutX="61.0" layoutY="277.0" />
+      <TextField fx:id="echipaParticipant" layoutX="136.0" layoutY="342.0" />
+      <Label layoutX="19.0" layoutY="281.0" text="Nume" />
+      <Label layoutX="19.0" layoutY="319.0" text="CapacitateMotor" />
+      <Label layoutX="19.0" layoutY="346.0" text="IdEchipa" />
+      <ComboBox fx:id="comboCapMotor" layoutX="135.0" layoutY="315.0" prefWidth="150.0" />
+      <Button fx:id="Add" layoutX="335.0" layoutY="342.0" mnemonicParsing="false" onAction="#adaugaParticipant" text="Add" />
+   </children>
+</AnchorPane>

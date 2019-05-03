@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="RepoCurse" class="Repository.RepoSqlCurse"></bean>
+    <bean id="RepoParticipant" class="Repository.RepoSqlParticipant"></bean>
+    <bean id="RepoEchipa" class="Repository.RepoSqlEchipa"></bean>
+    <bean id="RepoLogin" class="Repository.RepoSqlLogin"></bean>
+
+    <bean id="srv" class="Service.Service"></bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+
+        <property name="serviceName" value="Chat"/>
+        <property name="service" ref="srv"/>
+        <property name="servicePort" value="1099"/>
+        <property name="serviceInterface" value="Service.IntService"/>
+    </bean>
+</beans>

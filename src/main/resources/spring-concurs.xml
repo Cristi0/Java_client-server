@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="pizza"
+          class="pizzax.Pizza"
+          factory-method="getInstance">
+    </bean>
+
+    <bean id="pizzaValid"
+          class="pizzax.ValidPizza">
+
+        <constructor-arg index="0" ref="pizza"/>
+        <constructor-arg index="1" value="0"/>
+    </bean>
+
+    <bean id="pizzaRepo"
+          class="pizzax.PizzaRepo">
+        <constructor-arg ref="pizzaValid"/>
+    </bean>
+
+</beans>
